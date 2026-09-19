@@ -1,0 +1,819 @@
+/* =========================================================
+   SM SUPPLY SERVICES — PRODUCT DETAILS PAGE
+   =========================================================
+   Sections:
+   1. Product Detail Hero
+   2. Breadcrumb
+   3. Hero Content
+   4. Product Overview Section
+   5. Product Image + Badge
+   6. Product Content
+   7. Product Range Section
+   8. Section Heading
+   9. Fire Products Grid
+   10. Applications Section (dark tiles)
+   11. Application Item (light card variant)
+   12. Product Detail CTA
+   13. Button Helpers
+   14. Responsive — 1100px
+   15. Responsive — 900px
+   16. Responsive — 650px
+   17. Responsive — 576px
+   18. Responsive — 420px
+   19. Reduced Motion
+   ========================================================= */
+
+
+/* =========================================================
+   1. PRODUCT DETAIL HERO
+   ========================================================= */
+
+.product-detail-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 75px 0 90px;
+    background: linear-gradient(
+        135deg,
+        #031b38 0%,
+        #062d55 52%,
+        #0a4778 100%
+    );
+    color: #ffffff;
+}
+
+/* Gold decorative glow (top-right) */
+.product-detail-hero::before {
+    content: "";
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    top: -320px;
+    right: -120px;
+    border-radius: 50%;
+    background: rgba(245, 184, 46, 0.09);
+    filter: blur(25px);
+    pointer-events: none;
+}
+
+/* Blue decorative glow (bottom-left) */
+.product-detail-hero::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    bottom: -250px;
+    left: 5%;
+    border-radius: 50%;
+    background: rgba(30, 144, 255, 0.08);
+    filter: blur(30px);
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   2. BREADCRUMB
+   ========================================================= */
+
+.product-detail-breadcrumb {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 55px;
+    font-size: 14px;
+}
+
+.product-detail-breadcrumb a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.product-detail-breadcrumb a:hover {
+    color: #f5b82e;
+}
+
+.product-detail-breadcrumb span {
+    color: #f5b82e;
+    font-weight: 700;
+}
+
+.product-detail-breadcrumb strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   3. HERO CONTENT
+   ========================================================= */
+
+.product-detail-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+}
+
+.product-detail-hero-content .section-label {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: #f5b82e;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.product-detail-hero-content h1 {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(50px, 7vw, 86px);
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -3px;
+    color: #ffffff;
+}
+
+.product-detail-hero-content h1 span {
+    color: #f5b82e;
+}
+
+.product-detail-hero-content p {
+    max-width: 680px;
+    margin: 28px 0 0;
+    font-size: 18px;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+
+/* =========================================================
+   4. PRODUCT OVERVIEW SECTION
+   ========================================================= */
+
+.product-detail-section {
+    padding: 105px 0;
+    background: #ffffff;
+}
+
+.product-detail-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 80px;
+    align-items: center;
+}
+
+
+/* =========================================================
+   5. PRODUCT IMAGE + BADGE
+   ========================================================= */
+
+.product-detail-image {
+    position: relative;
+}
+
+.product-detail-image-inner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 22px;
+    background: #f4f7fa;
+    box-shadow: 0 25px 60px rgba(4, 31, 61, 0.14);
+}
+
+.product-detail-image-inner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 60%,
+        rgba(3, 27, 56, 0.25)
+    );
+    pointer-events: none;
+}
+
+.product-detail-image img {
+    display: block;
+    width: 100%;
+    height: 560px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.8s ease;
+}
+
+.product-detail-image-inner:hover img {
+    transform: scale(1.05);
+}
+
+/* Floating badge */
+.product-image-badge {
+    position: absolute;
+    z-index: 3;
+    left: 25px;
+    bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 20px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+    backdrop-filter: blur(10px);
+}
+
+.product-image-badge span {
+    font-family: "Manrope", sans-serif;
+    font-size: 27px;
+    line-height: 1;
+    font-weight: 800;
+    color: #07335f;
+}
+
+.product-image-badge small {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    color: #d99a00;
+}
+
+
+/* =========================================================
+   6. PRODUCT CONTENT
+   ========================================================= */
+
+.product-detail-content .section-label {
+    display: inline-block;
+    color: #d99a00;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.product-detail-content h2 {
+    margin: 15px 0 25px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(34px, 4vw, 50px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #082b50;
+}
+
+.product-detail-content p {
+    margin: 0 0 17px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #64748b;
+}
+
+
+/* =========================================================
+   7. PRODUCT RANGE SECTION
+   ========================================================= */
+
+.product-range-section {
+    padding: 105px 0;
+    background: #f7f9fc;
+}
+
+
+/* =========================================================
+   8. SECTION HEADING
+   ========================================================= */
+
+.section-heading {
+    max-width: 720px;
+    margin-bottom: 55px;
+}
+
+.section-heading .section-label {
+    display: inline-block;
+    color: #d99a00;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    margin: 14px 0 16px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(34px, 4vw, 46px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #082b50;
+}
+
+.section-heading p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #64748b;
+}
+
+
+/* =========================================================
+   9. FIRE PRODUCTS GRID
+   ========================================================= */
+
+.fire-products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.fire-product-item {
+    position: relative;
+    padding: 34px 28px;
+    background: #ffffff;
+    border: 1px solid #e7edf4;
+    border-radius: 17px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.fire-product-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 28px;
+    right: 28px;
+    height: 3px;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(90deg, #f5b82e, #ffd978);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fire-product-item:hover {
+    transform: translateY(-8px);
+    border-color: rgba(245, 184, 46, 0.55);
+    box-shadow: 0 20px 45px rgba(4, 30, 60, 0.10);
+}
+
+.fire-product-item:hover::before {
+    opacity: 1;
+}
+
+.fire-product-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #fff6dc, #ffedbd);
+    border: 1px solid rgba(245, 184, 46, 0.25);
+    font-size: 24px;
+}
+
+.fire-product-item h3 {
+    margin: 0 0 12px;
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 800;
+    color: #082b50;
+}
+
+.fire-product-item p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #64748b;
+}
+
+
+/* =========================================================
+   10. APPLICATIONS SECTION (dark tiles)
+   ========================================================= */
+
+.applications-section {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.applications-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.applications-grid > div {
+    position: relative;
+    min-height: 155px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 25px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: linear-gradient(145deg, #062b51, #0b4779);
+    box-shadow: 0 12px 30px rgba(4, 35, 65, 0.10);
+    transition: transform 0.3s ease;
+}
+
+.applications-grid > div::after {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    right: -55px;
+    bottom: -55px;
+    border-radius: 50%;
+    background: rgba(245, 184, 46, 0.12);
+}
+
+.applications-grid > div:hover {
+    transform: translateY(-6px);
+}
+
+.applications-grid span {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #f5b82e;
+}
+
+.applications-grid h3 {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    line-height: 1.3;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   11. APPLICATION ITEM (light card variant)
+   ========================================================= */
+
+.application-item {
+    position: relative;
+    min-height: 155px;
+    padding: 25px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 1px solid #e7edf4;
+    box-shadow: 0 8px 25px rgba(10, 35, 68, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.application-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #1261b5, #f5b82e);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+}
+
+.application-item:hover {
+    transform: translateY(-6px);
+    border-color: rgba(18, 97, 181, 0.18);
+    box-shadow: 0 16px 35px rgba(10, 35, 68, 0.10);
+}
+
+.application-item:hover::before {
+    transform: scaleX(1);
+}
+
+.application-icon {
+    width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 14px;
+    border-radius: 15px;
+    background: rgba(18, 97, 181, 0.08);
+    border: 1px solid rgba(18, 97, 181, 0.10);
+    font-size: 25px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.application-item:hover .application-icon {
+    transform: scale(1.08);
+    background: rgba(245, 184, 46, 0.15);
+}
+
+.application-number {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    color: #94a3b8;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.application-item h3 {
+    margin: 0;
+    color: #082b50;
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   12. PRODUCT DETAIL CTA
+   ========================================================= */
+
+.product-detail-cta {
+    position: relative;
+    overflow: hidden;
+    padding: 85px 0;
+    background: linear-gradient(120deg, #031b38 0%, #073a68 100%);
+}
+
+.product-detail-cta::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    right: -170px;
+    top: -220px;
+    border-radius: 50%;
+    background: rgba(245, 184, 46, 0.08);
+    filter: blur(20px);
+}
+
+.product-detail-cta-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.product-detail-cta .section-label {
+    color: #f5b82e;
+}
+
+.product-detail-cta h2 {
+    max-width: 650px;
+    margin: 12px 0 15px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(34px, 4vw, 48px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #ffffff;
+}
+
+.product-detail-cta p {
+    max-width: 620px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.product-detail-cta .btn {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   13. BUTTON HELPERS
+   ========================================================= */
+
+.detail-quote-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.detail-quote-btn,
+.product-detail-cta .btn {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   14. RESPONSIVE — 1100px (Large Tablet)
+   ========================================================= */
+
+@media (max-width: 1100px) {
+    .product-detail-grid {
+        gap: 50px;
+    }
+
+    .fire-products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .applications-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   15. RESPONSIVE — 900px (Tablet)
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .product-detail-hero {
+        padding: 65px 0 75px;
+    }
+
+    .product-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .product-detail-image img {
+        height: 500px;
+    }
+
+    .product-detail-cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================================================
+   16. RESPONSIVE — 650px (Mobile)
+   ========================================================= */
+
+@media (max-width: 650px) {
+    .product-detail-hero {
+        padding: 50px 0 60px;
+    }
+
+    .product-detail-breadcrumb {
+        margin-bottom: 40px;
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    .product-detail-hero-content h1 {
+        font-size: 52px;
+        line-height: 1.02;
+        letter-spacing: -2px;
+    }
+
+    .product-detail-hero-content p {
+        margin-top: 22px;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .product-detail-section,
+    .product-range-section,
+    .applications-section {
+        padding: 70px 0;
+    }
+
+    .product-detail-image img {
+        height: 380px;
+    }
+
+    .product-image-badge {
+        left: 18px;
+        bottom: 18px;
+        padding: 12px 16px;
+    }
+
+    .product-image-badge span {
+        font-size: 23px;
+    }
+
+    .product-detail-content h2 {
+        font-size: 36px;
+    }
+
+    .product-detail-content p {
+        font-size: 15px;
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+        font-size: 36px;
+    }
+
+    .fire-products-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .fire-product-item {
+        padding: 28px 24px;
+    }
+
+    .applications-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .applications-grid > div {
+        min-height: 135px;
+        padding: 20px;
+    }
+
+    .applications-grid h3 {
+        font-size: 16px;
+    }
+
+    .product-detail-cta {
+        padding: 65px 0;
+    }
+
+    .product-detail-cta h2 {
+        font-size: 34px;
+    }
+
+    .product-detail-cta p {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   17. RESPONSIVE — 576px (Small Mobile — Application Item)
+   ========================================================= */
+
+@media (max-width: 576px) {
+    .application-item {
+        min-height: 135px;
+        padding: 20px 15px;
+    }
+
+    .application-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+
+    .application-item h3 {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   18. RESPONSIVE — 420px (Extra Small Mobile)
+   ========================================================= */
+
+@media (max-width: 420px) {
+    .product-detail-hero-content h1 {
+        font-size: 44px;
+    }
+
+    .product-detail-image img {
+        height: 320px;
+    }
+
+    .applications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .applications-grid > div {
+        min-height: 125px;
+    }
+
+    .product-image-badge {
+        gap: 10px;
+    }
+
+    .product-image-badge small {
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   19. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .product-detail-image img,
+    .fire-product-item,
+    .applications-grid > div {
+        transition: none;
+    }
+}
